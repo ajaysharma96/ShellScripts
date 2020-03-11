@@ -1,0 +1,35 @@
+#! /bin/bash
+
+#comment
+
+myName="Ajay"  #no space before or after = assignment IMP
+
+
+declare -r NUM1=5  #NUM1 is constant
+
+num2=4
+
+num3=$((NUM1+num2))
+num4=$((NUM1-num2))
+num5=$((NUM1*num2))
+num6=$((NUM1/num2))
+
+echo "5 + 4 is $num3"
+echo "5 - 4 is $num4"
+echo "5 * 4 is $num5"
+echo "5 / 4 is $num6"
+
+
+echo $((5**2))
+echo $((5%4))
+
+rand=5
+let rand+=4
+
+echo $rand
+
+cat<< END
+This text
+has multiple
+lines
+END

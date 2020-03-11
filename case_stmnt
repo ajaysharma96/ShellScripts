@@ -1,0 +1,29 @@
+#! /bin/bash
+
+read -p "Enter your age" Age
+
+case $Age in
+[0-4])
+	echo "Too young for school"
+	;;
+
+5)
+	echo "You are kindergartner"
+	;;
+
+[6-9]|1[0-8])
+	grade=$((Age-5))
+	echo "You are in grade $grade"
+	;;
+
+*)
+	echo "You are too old for Schoool"
+	;;
+esac
+
+
+can_vote=0
+
+(( Age >= 18?(can_vote=1):(can_vote=0)))
+
+echo "Can vote : $can_vote"

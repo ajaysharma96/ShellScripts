@@ -1,0 +1,46 @@
+#! /bin/bash
+
+read -p "Enter a date"  date
+
+pat="^[0-9]{8}$"
+
+if [[ $date =~ $pat ]]; then
+	echo "is a valid date"
+else
+	echo "is invalid date"
+fi
+
+# store the original Input File stream
+OIFS="$IFS"
+# use comma as a separator instead of space
+IFS=","
+
+read -p "Enter two numbers separated by comma" num1 num2
+
+num1=${num1//[[:blank:]]/} #parameter expansion
+num2=${num2//[[:blank:]]/}
+
+sum=$((num1+num2))
+
+echo "sum of $num1 + $num2 is $sum"
+
+IFS=$OIFS
+
+name="Ajay"
+echo "${name}'s house is in Seattle" # {} is used for parameter expansion
+
+sample_string="Dog climbed the tree"
+echo "${sample_string//Dog/Cat}"
+
+name=""
+echo "I am ${name:=Nothing}" # default value to name
+
+
+
+
+
+
+
+
+
+

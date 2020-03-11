@@ -1,0 +1,29 @@
+#! /bin/bash
+
+file1="./shell_scripts/test"
+file2="./shell_scripts/test_1"
+
+if [ -e "$file1" ]; then
+	echo "file exists"
+fi
+
+if [ -d "$file1" ]; then
+	echo "file is directory"
+else
+	echo "is a normal file"
+fi
+
+if [ -r "$file1" ]; then
+	echo "file is readable"
+else
+	echo "file is not reabable"
+fi
+
+
+
+
+
+
+
+
+

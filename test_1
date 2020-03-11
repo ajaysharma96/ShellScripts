@@ -1,0 +1,78 @@
+#! /bin/bash
+
+getDate(){
+	date
+
+	return
+}
+
+getDate
+
+
+name="Ajay"
+
+demLocal(){
+	local	name="Sharma"
+	return
+}
+
+demLocal
+
+echo "$name"
+
+
+getSum(){
+	local num3=$1
+	local num4=$2
+
+	local sum=$((num3+num4))
+
+	echo $sum
+}
+
+num1=5
+num2=6
+
+sum=$(getSum num1 num2)
+echo "The sum is $sum"
+
+
+read -p "What is your name?" name
+echo "Hello $name!"
+read -p "what is your age?" age
+echo "You entered $age"
+
+
+if [ $age -ge 16 ]
+then
+	echo "You can get learner's license"
+elif [ $age -eq 15 ]
+then
+	echo "You have to wait one year"
+else
+	echo "You cannot drive yet"
+fi
+
+
+read -p "Enter a num" num
+
+if (( num == 10 )); then
+	echo "num equals ten"
+elif (( num < 10)); then
+	echo "num less than ten"
+else
+	echo "num greater than ten"
+fi
+
+if (( ((num % 2)) == 0)); then
+	echo "number is even"
+else
+	echo "number is odd"
+fi
+
+# create if samp_file doesn't exists and open it in vim
+touch samp_file && vim samp_file
+
+# check if samp_dir exists , if not create it
+[ -d samp_dir ] || mkdir samp_dir
+
